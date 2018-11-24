@@ -1,18 +1,16 @@
 package com.vmisu.databases.apiDatabase
 
 class FeedEntry {
-    var name: String = ""
-    var artist: String = ""
-    var releaseDate: String = ""
+    var title: String = ""
+    var published: String = ""
+    var link: String = ""
     var summary: String = ""
-    var imageURL: String = ""
 
     override fun toString(): String {
         return """
-            name = $name
-            artist = $artist
-            releaseDate = $releaseDate
-            imageURL = $imageURL
+            Title = $title
+            Published = $published
+            Summary = $summary
         """.trimIndent()
     }
 }

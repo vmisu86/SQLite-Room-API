@@ -25,16 +25,12 @@ abstract class CoursRoomDatabase : RoomDatabase() {
                 context: Context,
                 scope: CoroutineScope
         ): CoursRoomDatabase {
-            // if the INSTANCE is not null, then return it,
-            // if it is, then create the database
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                         context.applicationContext,
                         CoursRoomDatabase::class.java,
                         "word_database"
                 )
-                        // Wipes and rebuilds instead of migrating if no Migration object.
-                        // Migration is not part of this codelab.
                         .fallbackToDestructiveMigration()
                         .addCallback(
                             WordDatabaseCallback(
@@ -43,7 +39,6 @@ abstract class CoursRoomDatabase : RoomDatabase() {
                         )
                         .build()
                 INSTANCE = instance
-                // return instance
                 instance
             }
         }
@@ -54,8 +49,6 @@ abstract class CoursRoomDatabase : RoomDatabase() {
 
             override fun onOpen(db: SupportSQLiteDatabase) {
                 super.onOpen(db)
-                // If you want to keep the data through app restarts,
-                // comment out the following line.
                 INSTANCE?.let { database ->
                     scope.launch(Dispatchers.IO) {
                         populateDatabase(database.wordDao())
@@ -66,11 +59,8 @@ abstract class CoursRoomDatabase : RoomDatabase() {
 
 
         fun populateDatabase(coursDao: CoursDao) {
-            // Start the app with a clean database every time.
-            // Not needed if you only populate on creation.
             coursDao.deleteAll()
-
-            var cours = Cours("Michel")
+            var cours = Cours("Android ABC")
             coursDao.insert(cours)
             cours = Cours("LP-DAM!")
             coursDao.insert(cours)

@@ -14,10 +14,6 @@ import kotlinx.android.synthetic.main.activity_api_database.*
 import java.net.URL
 import kotlin.properties.Delegates
 
-// This is an example RSS Reader
-// https://www.apple.com/rss/
-
-
 class ApiDatabase : AppCompatActivity() {
 
     private val TAG = "ApiActivity"
@@ -32,7 +28,7 @@ class ApiDatabase : AppCompatActivity() {
         supportActionBar!!.setDefaultDisplayHomeAsUpEnabled(true)
 
         Log.d(TAG,"onCreate Called")
-        downloadData.execute("http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/limit=10/xml")
+        downloadData.execute("https://www.nice.fr/fr/rss/feed/article")
         Log.d(TAG, "oncreate: done")
     }
     override fun onDestroy() {

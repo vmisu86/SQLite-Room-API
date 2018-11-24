@@ -4,6 +4,11 @@ package com.vmisu.databases.apiDatabase
 import android.util.Log
 import org.xmlpull.v1.XmlPullParser
 import org.xmlpull.v1.XmlPullParserFactory
+/*
+* XML Pull Parser is an interface that defines parsing functionality provided in XMLPULL V1 API
+*
+* */
+
 
 class ParseApplications {
     private val TAG = "ParseApplications"
@@ -28,6 +33,7 @@ class ParseApplications {
 
                     XmlPullParser.START_TAG -> {
                         Log.d(TAG, "parse: Starting tag for " + tagName)
+                        //the begin TAG of the section
                         if (tagName == "entry") {
                             inEntry = true
                         }
@@ -44,12 +50,11 @@ class ParseApplications {
                                     inEntry = false
                                     currentRecord = FeedEntry()   // create a new object
                                 }
-
-                                "name" -> currentRecord.name = textValue
-                                "artist" -> currentRecord.artist = textValue
-                                "releasedate" -> currentRecord.releaseDate = textValue
+                                //Select the TAG names to show
+                                "title" -> currentRecord.title = textValue
+                                "published" -> currentRecord.published = textValue
+                                "link" -> currentRecord.link = textValue
                                 "summary" -> currentRecord.summary = textValue
-                                "image" -> currentRecord.imageURL = textValue
                             }
                         }
                     }
@@ -57,11 +62,6 @@ class ParseApplications {
 
                 // Nothing else to do.
                 eventType = xpp.next()
-            }
-
-            for (app in applications) {
-                Log.d(TAG,"*******************")
-                Log.d(TAG,app.toString())
             }
 
         } catch (e: Exception) {
