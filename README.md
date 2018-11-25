@@ -6,7 +6,7 @@
 Il y a 3 examples :
 
 
-![Image Cours](SQLite-Room-Api/SQLite-Room-Api.gif)
+![Image Cours](SQLite-Room-Api.gif)
 
 ### SQLite
 
