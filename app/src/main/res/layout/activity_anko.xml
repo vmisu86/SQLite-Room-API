@@ -7,7 +7,7 @@
               android:orientation="vertical"
 >
     <TextView android:id="@+id/apiTitle"
-            android:text="Nice(France) RSS"
+            android:text="SQLite - Anko"
               android:textSize="30dp"
               android:background="@color/itembackground"
               android:textAlignment="center"
