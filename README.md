@@ -5,6 +5,9 @@
 
 Il y a 3 examples :
 
+
+![Image Cours](https://raw.githubusercontent.com/vmisu86/mnm_damdam/master/img/1.png)
+
 ### SQLite
 
 SQLite est intégrée dans chaque appareil Android. L'utilisation d'une base de données SQLite sous Android ne nécessite pas de configuration ou d'administration de la base de données.
