@@ -1,5 +1,7 @@
 # SQLite-Room-Api
 
+#### Mihaly VARGA
+##### LP-DAM
 
 Il y a 3 examples :
 
