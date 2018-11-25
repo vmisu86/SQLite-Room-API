@@ -6,7 +6,7 @@
 Il y a 3 examples :
 
 
-![Image Cours](https://raw.githubusercontent.com/vmisu86/SQLite-Room-Api/)
+![Image Cours](https://raw.githubusercontent.com/vmisu86/SQLite-Room-Api/SQLite-Room-Api.gif)
 
 ### SQLite
 
